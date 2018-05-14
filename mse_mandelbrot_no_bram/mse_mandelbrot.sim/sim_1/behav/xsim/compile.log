@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/quartus/Documents/TP/TP_0/mse_mandelbrot_no_bram/ip/hdl/src/Mandelbrot_iteration.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Mandelbrot_iteration
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/quartus/Documents/TP/TP_0/mse_mandelbrot_no_bram/ip/hdl/tb/tb_fractal_alone.vhdl" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_fractal

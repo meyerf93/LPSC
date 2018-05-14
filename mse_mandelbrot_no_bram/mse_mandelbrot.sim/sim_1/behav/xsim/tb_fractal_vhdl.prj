@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../ip/hdl/src/hdmi_interface_pkg.vhd" \
+"../../../../ip/hdl/src/Mandelbrot_iteration.vhd" \
+"../../../../ip/hdl/tb/tb_package.vhd" \
+"../../../../ip/hdl/tb/tb_fractal_alone.vhdl" \
+
+# Do not sort compile order
+nosort

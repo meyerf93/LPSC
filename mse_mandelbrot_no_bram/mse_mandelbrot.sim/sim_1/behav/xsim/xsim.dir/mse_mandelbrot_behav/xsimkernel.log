@@ -1,0 +1,4 @@
+Running: xsim.dir/mse_mandelbrot_behav/xsimk -simmode gui -wdb mse_mandelbrot_behav.wdb -simrunnum 0 -socket 58107
+Design successfully loaded
+Design Loading Memory Usage: 52856 KB (Peak: 52856 KB)
+Design Loading CPU Usage: 40 ms
