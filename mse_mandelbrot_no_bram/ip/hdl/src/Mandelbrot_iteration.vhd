@@ -31,7 +31,7 @@ entity Mandelbrot_iteration is
     generic (   comma    : integer := 12;  -- nombre de bits après la virgule
                 max_iter : integer := 100;
                 SIZE     : integer := 16);
-                
+
     Port ( clk : in STD_LOGIC;
            rst : in STD_LOGIC;
            ready : out STD_LOGIC;
@@ -42,7 +42,7 @@ entity Mandelbrot_iteration is
            z_real : out STD_LOGIC_VECTOR (SIZE-1 downto 0);
            z_imaginary : out STD_LOGIC_VECTOR (SIZE-1 downto 0);
            iterations : out STD_LOGIC_VECTOR (SIZE-1 downto 0));
-           
+
 end Mandelbrot_iteration;
 
 
@@ -73,17 +73,17 @@ begin
                 z_real <= std_logic_vector(z_real_d);
                 z_imaginary <= std_logic_vector(z_imaginary_d);
 	            ready_s <='0';
-	        elsif(ready_s = '0') then
+	          elsif(ready_s = '0') then
                 z_real_d := resize((z_real_2 -z_imaginary_2 + unsigned(c_real)),z_real_d'length);
                 z_imaginary_d := resize((unsigned(z_real_imaginary * 2) + unsigned(c_imaginary)),z_imaginary_d'length);
             end if;
 		    -- mutilplex for z_real an z_imagi
 		    if( ite = 0) then
 		       z_real_s <= (others => '0');
-               z_imaginary_s <= (others => '0');
-            else
+           z_imaginary_s <= (others => '0');
+        else
 		       z_real_s <= std_logic_vector(z_real_d);
-               z_imaginary_s <= std_logic_vector(z_imaginary_d);
+           z_imaginary_s <= std_logic_vector(z_imaginary_d);
 		    end if;
 		    -- calcul of z²
     	    z_real_2 := unsigned(z_real_s)* unsigned(z_real_s);
@@ -93,11 +93,11 @@ begin
 		        -- combinaison of z
     	    z_r_2_z_i_2 := z_imaginary_2 + z_real_2;
     		    -- finish condition
-    	    if(z_r_2_z_i_2 >= ( 4000)) then
+    	    if(z_r_2_z_i_2 >= (unsigned("0000010000000000")) then
     	        finished <= '1';
     	    else
     	        finished <= '0';
-    		    ite <= ite + 1;
+    		      ite <= ite + 1;
     	    end if;
         end if;
 
